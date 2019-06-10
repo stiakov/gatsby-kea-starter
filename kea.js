@@ -1,6 +1,6 @@
 import { kea } from 'kea';
 import PropTypes from 'prop-types';
-import { select, put } from 'redux-saga/effects';
+import { select } from 'redux-saga/effects';
 
 export default kea({
   path: () => ['kea'],
@@ -27,7 +27,12 @@ export default kea({
 
   takeEvery: ({ actions, workers }) => ({
     [actions.increment]: function*() {
-      console.log('incremented');
+      const state = yield select();
+      console.log(`Incremented counter to ${state.kea.counter}`);
+    },
+    [actions.decrement]: function*() {
+      const state = yield select();
+      console.log(`Decremented counter to ${state.kea.counter}`);
     },
   }),
 });
