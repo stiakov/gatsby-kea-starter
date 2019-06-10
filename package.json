@@ -1,24 +1,20 @@
 {
-  "name": "@borekb/gatsby-starter-mobx",
-  "description": "Gatsby starter with MobX and TypeScript",
+  "name": "Gatsby Kea Starter",
+  "description": "Gatsby starter with redux and sagas made simpler by https://kea.js.org",
   "version": "1.0.0",
-  "author": "Borek Bernard <borekb@gmail.com>",
+  "author": "Benjamin Glitsos",
   "license": "MIT",
   "scripts": {
-    "start": "gatsby develop",
-    "build": "rm -rf public && rm -rf .cache && gatsby build",
-    "tsc": "tsc",
-    "lint": "tslint -p .",
-    "prettier": "prettier --write 'src/**'",
-    "gatsby": "gatsby",
-    "test": "jest"
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write '**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-decorators": "^7.1.6",
     "babel-preset-gatsby": "^0.1.4",
     "gatsby": "^2.0.55",
-    "gatsby-plugin-typescript": "^2.0.1",
     "kea": "^0.28.7",
     "kea-saga": "^0.3.5",
     "prop-types": "^15.7.2",

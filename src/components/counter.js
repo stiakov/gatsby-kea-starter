@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import keaLogic from '../../kea.js';
+import keaLogic from '../state/kea.js';
 import { connect } from 'kea';
 
 @connect({
