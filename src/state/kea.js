@@ -27,12 +27,12 @@ export default kea({
 
   takeEvery: ({ actions, workers }) => ({
     [actions.increment]: function*() {
-      const state = yield select();
-      console.log(`Incremented counter to ${state.kea.counter}`);
+      const counter = yield select(state => state.kea.counter);
+      console.log(`Incremented counter to ${counter}`);
     },
     [actions.decrement]: function*() {
-      const state = yield select();
-      console.log(`Decremented counter to ${state.kea.counter}`);
+      const counter = yield select(state => state.kea.counter);
+      console.log(`Decremented counter to ${counter}`);
     },
   }),
 });
