@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import keaLogic from '../../kea.js';
 import { connect } from 'kea';
 
