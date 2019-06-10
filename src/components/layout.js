@@ -1,36 +1,16 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-// import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby';
-import { connect } from 'react-redux';
+/**
+ * Layout component that queries for data
+ * with Gatsby's StaticQuery component
+ *
+ * See: https://www.gatsbyjs.org/docs/static-query/
+ */
 
-import Header from './header';
-import './layout.css';
+import React from "react"
+import PropTypes from "prop-types"
+import { StaticQuery, graphql } from "gatsby"
 
-const Counter = ({ count, increment }) => (
-  <div>
-    <p>Count: {count}</p>
-    <button onClick={increment}>Increment</button>
-  </div>
-);
-
-Counter.propTypes = {
-  count: PropTypes.number.isRequired,
-  increment: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = ({ count }) => {
-  return { count };
-};
-
-const mapDispatchToProps = dispatch => {
-  return { increment: () => dispatch({ type: `INCREMENT` }) };
-};
-
-const ConnectedCounter = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter);
+import Header from "./header"
+import "./layout.css"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -48,22 +28,26 @@ const Layout = ({ children }) => (
         <Header siteTitle={data.site.siteMetadata.title} />
         <div
           style={{
-            margin: '0 auto',
+            margin: `0 auto`,
             maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
+            padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0,
           }}
         >
-          {children}
-          <ConnectedCounter />
+          <main>{children}</main>
+          <footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </footer>
         </div>
       </>
     )}
   />
-);
+)
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
+}
 
-export default Layout;
+export default Layout
