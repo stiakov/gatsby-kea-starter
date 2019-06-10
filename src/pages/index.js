@@ -6,7 +6,7 @@ import Counter from '../components/counter';
 
 const IndexPage = () => (
   <Layout>
-    <h1>Hi people</h1>
+    <h1>Simple Counter</h1>
     <Counter />
     <Link to='/page-2/'>Go to page 2</Link>
   </Layout>
