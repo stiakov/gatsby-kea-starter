@@ -24,4 +24,10 @@ export default kea({
   selectors: ({ selectors }) => ({
     doubleCounter: [() => [selectors.counter], counter => counter * 2, PropTypes.number],
   }),
+
+  takeEvery: ({ actions, workers }) => ({
+    [actions.increment]: function*() {
+      console.log('incremented');
+    },
+  }),
 });
