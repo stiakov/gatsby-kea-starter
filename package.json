@@ -1,5 +1,5 @@
 {
-  "name": "Gatsby Kea Starter",
+  "name": "gatsby-kea-starter",
   "description": "Gatsby starter with redux and sagas made simpler by https://kea.js.org",
   "version": "1.0.0",
   "author": "Benjamin Glitsos",
